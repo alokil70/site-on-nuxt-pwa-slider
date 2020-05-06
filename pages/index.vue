@@ -10,24 +10,36 @@
         <h2>Турбо доставка 29 минут</h2>
       </div>
     </div>
-
-
     <!-- Swiper -->
     <div class="main-slider">
       <div class="swiper-wrapper">
         <div class="swiper-slide main-slider-item">
-          <div>Суши</div>
-          <div>муши</div>
           <img src="../assets/images/q1.jpg">
+          <div class="swiper-slide-box-bottom">
+            <div class="swiper-slide-box-bottom-text">Суши</div>
+            <div class="swiper-slide-box-bottom-text2">муши</div>
+          </div>
         </div>
         <div class="swiper-slide main-slider-item">
           <img src="../assets/images/q2.jpg">
+          <div class="swiper-slide-box-bottom">
+            <div class="swiper-slide-box-bottom-text">Суши</div>
+            <div class="swiper-slide-box-bottom-text2">муши</div>
+          </div>
         </div>
         <div class="swiper-slide main-slider-item">
           <img src="../assets/images/q1.jpg">
+          <div class="swiper-slide-box-bottom">
+            <div class="swiper-slide-box-bottom-text">Суши</div>
+            <div class="swiper-slide-box-bottom-text2">муши</div>
+          </div>
         </div>
         <div class="swiper-slide main-slider-item">
           <img src="../assets/images/q3.jpg">
+          <div class="swiper-slide-box-bottom">
+            <div class="swiper-slide-box-bottom-text">Суши</div>
+            <div class="swiper-slide-box-bottom-text2">муши</div>
+          </div>
         </div>
       </div>
       <!-- Add Pagination -->
@@ -47,41 +59,44 @@
       timeLine.to('.page-left-logo', 1, {opacity: 1})
         .from('.page_left_logo__welcome', .5, {opacity: 0, y: -100})
         .from('.page_left_logo__h1', .5, {opacity: 0, y: 100})
-        .staggerFrom('.page_left_logo__h2 h2', .3, {opacity: 0, y: 100, onComplete: startSlide()}, .1)
+        .staggerFrom('.page_left_logo__h2 h2', .3, {opacity: 0, y: 100, onComplete: startSlide()}, .3)
 
       function startSlide() {
         const timeLine = gsap.timeline()
-        timeLine.to('.page-left-logo', 1, {x: '-100%', opacity: 0, display: 'none'}, 3)
-          .fromTo('.main-slider', 1, {opacity: 0, x: 500}, {opacity: 1, x: 0})
+        timeLine.to('.page-left-logo', 1, {
+          x: '-100%', opacity: 0, display: 'none', onComplete() {
+            const swiper = new Swiper('.main-slider', {
+              slidesPerView: 1,
+              loop: true,
+              spaceBetween: 10,
+              // effect: 'fade',
+              // initialSlide: 2,
+              // init: false,
+              /*pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+              },*/
+              breakpoints: {
+                640: {
+                  slidesPerView: 1,
+                  spaceBetween: 10,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                1024: {
+                  slidesPerView: 4,
+                  spaceBetween: 20,
+                },
+              }
+            })
+          }
+        }, 4)
+          .fromTo('.main-slider', .7, {opacity: 0, x: 800}, {opacity: 1, x: 0})
       }
 
 
-      const swiper = new Swiper('.main-slider', {
-        slidesPerView: 4,
-        // loop: true,
-        spaceBetween: 20,
-        // effect: 'fade',
-        // initialSlide: 2,
-        // init: false,
-        /*pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },*/
-        breakpoints: {
-          640: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 50,
-          },
-        }
-      });
     }
   }
 </script>
@@ -89,7 +104,6 @@
 <style>
   .main-container {
     display: flex;
-
   }
 
   .page-left-logo {
@@ -111,8 +125,9 @@
 
   .main-slider {
     overflow: hidden;
-    height: 100vh;
     width: 100%;
+    margin-top: 100px;
+
     position: relative;
     opacity: 0;
   }
@@ -124,14 +139,30 @@
   .swiper-slide {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: space-around;
-    border: 1px solid #333;
-    height: 80%;
-    min-width: 90%;
+    background: #7F828B;
     overflow: hidden;
   }
-  .swiper-slide img{
+
+  .swiper-slide img {
     width: 800px;
+  }
+
+  .swiper-slide-box-bottom{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100px;
+    background: rgba(0,0,0,.5);
+  }
+  .swiper-slide-box-bottom-text{
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+  }
+  .swiper-slide-box-bottom-text2{
+    color: #fff;
+    font-size: 24px;
   }
 </style>

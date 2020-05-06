@@ -39,7 +39,6 @@
 
   .default-page {
     overflow: hidden;
-    padding: 0 10px;
   }
 
   a {
