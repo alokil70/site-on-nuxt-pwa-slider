@@ -23,6 +23,12 @@
         <div class="swiper-slide main-slider-item">
           <img src="../assets/images/q2.jpg">
         </div>
+        <div class="swiper-slide main-slider-item">
+          <img src="../assets/images/q1.jpg">
+        </div>
+        <div class="swiper-slide main-slider-item">
+          <img src="../assets/images/q3.jpg">
+        </div>
       </div>
       <!-- Add Pagination -->
       <div class="swiper-pagination"></div>
@@ -51,14 +57,16 @@
 
 
       const swiper = new Swiper('.main-slider', {
-        slidesPerView: 2,
-        loop: true,
-        spaceBetween: 40,
+        slidesPerView: 4,
+        // loop: true,
+        spaceBetween: 20,
+        // effect: 'fade',
+        // initialSlide: 2,
         // init: false,
-        pagination: {
+        /*pagination: {
           el: '.swiper-pagination',
           clickable: true,
-        },
+        },*/
         breakpoints: {
           640: {
             slidesPerView: 1,
@@ -66,7 +74,7 @@
           },
           768: {
             slidesPerView: 2,
-            spaceBetween: 40,
+            spaceBetween: 20,
           },
           1024: {
             slidesPerView: 4,
