@@ -148,21 +148,36 @@
     width: 800px;
   }
 
-  .swiper-slide-box-bottom{
+  .swiper-slide-box-bottom {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
     height: 100px;
-    background: rgba(0,0,0,.5);
+    background: rgba(0, 0, 0, .5);
   }
-  .swiper-slide-box-bottom-text{
+
+  .swiper-slide-box-bottom-text {
     color: #fff;
     font-size: 30px;
     text-align: center;
   }
-  .swiper-slide-box-bottom-text2{
+
+  .swiper-slide-box-bottom-text2 {
     color: #fff;
     font-size: 24px;
+  }
+
+  @media screen and (max-width: 767px){
+    .page_left_logo__h1 {
+      font-size: 50px;
+    }
+    .page_left_logo__h2{
+      font-size: 18px;
+    }
+    .header__nav {
+      font-size: 16px;
+      padding: 5px 10px;
+    }
   }
 </style>
