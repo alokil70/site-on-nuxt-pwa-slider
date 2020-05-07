@@ -69,6 +69,8 @@
               slidesPerView: 1,
               loop: true,
               spaceBetween: 10,
+              speed: 100,
+              effect: 'coverflow',
               // effect: 'fade',
               // initialSlide: 2,
               // init: false,
@@ -86,6 +88,10 @@
                   spaceBetween: 20,
                 },
                 1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 20,
+                },
+                1140: {
                   slidesPerView: 4,
                   spaceBetween: 20,
                 },
